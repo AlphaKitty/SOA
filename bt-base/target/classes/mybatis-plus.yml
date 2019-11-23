@@ -1,0 +1,19 @@
+# mybatis-plus
+#mybatis-plus:
+#  mapper-locations: classpath:mapper/**/*Mapper.xml
+# mybatis-plus-generator
+mybatis-plus-generator:
+  global:
+    basePath: user.dir
+    codePath: /src/main/java
+    author: 张友谅
+  dataSource:
+    url: jdbc:mysql://localhost:3306/bunny_petroleum?useUnicode=true&useSSL=false&characterEncoding=utf8
+    driver: com.mysql.jdbc.Driver
+    username: bunny
+    password: bunny
+  package:
+    packagePath: com.proshine.base.security
+  mapper:
+    mapperPath: /src/main/resources/mapper/
+    suffix: Mapper

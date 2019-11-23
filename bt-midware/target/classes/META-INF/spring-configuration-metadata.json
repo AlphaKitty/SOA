@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "mqtt",
+      "type": "com.proshine.midware.mqtt.MqttProperties",
+      "sourceType": "com.proshine.midware.mqtt.MqttProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "mqtt.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.proshine.midware.mqtt.MqttProperties"
+    },
+    {
+      "name": "mqtt.qos",
+      "type": "java.lang.Integer",
+      "sourceType": "com.proshine.midware.mqtt.MqttProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "mqtt.uris",
+      "type": "java.lang.String[]",
+      "sourceType": "com.proshine.midware.mqtt.MqttProperties"
+    }
+  ],
+  "hints": []
+}

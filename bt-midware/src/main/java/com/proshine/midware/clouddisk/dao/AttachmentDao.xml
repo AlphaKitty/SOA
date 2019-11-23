@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="net.bunnytouch.clouddisk.dao.AttachmentDao">
+
+    <resultMap id="dataResultMap" type="net.bunnytouch.clouddisk.entity.Attachment">
+        <result property="id" column="id"/>
+        <result property="cstmId" column="cstm_id"/>
+        <result property="parentId" column="parent_id"/>
+        <result property="name" column="name"/>
+        <result property="desc" column="desc_"/>
+        <result property="type" column="type"/>
+        <result property="suffix" column="suffix"/>
+        <result property="size" column="size"/>
+        <result property="path" column="path"/>
+        <result property="md5" column="md5"/>
+        <result property="usageCount" column="usage_count"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="creatorId" column="creator_id"/>
+        <result property="creatorName" column="creator_name"/>
+        <result property="checkTime" column="check_time"/>
+        <result property="checkUserId" column="check_user_id"/>
+        <result property="checkUserName" column="check_user_name"/>
+        <result property="checkStatus" column="check_status"/>
+        <result property="isDelete" column="is_delete"/>
+        <result property="libraryType" column="library_type"/>
+    </resultMap>
+    <resultMap id="TotalAttchment" type="net.bunnytouch.clouddisk.entity.TotalClass">
+        <result property="total" column="total"/>
+        <result property="type" column="type"/>
+        <result property="color" column="color"/>
+    </resultMap>
+    <sql id="table-name">tb_file</sql>
+
+    <sql id="column-part">
+        id,
+        cstm_id,
+        parent_id,
+        name,
+        desc_,
+        type,
+        suffix,
+        size,
+        path,
+        md5,
+        usage_count,
+        create_time,
+        update_time,
+        creator_id,
+        creator_name,
+        check_time,
+        check_user_id,
+        check_user_name,
+        check_status,
+        is_delete,
+        library_type
+    </sql>
+
+    <sql id="value-part">
+        #{entity.id:VARCHAR},
+        #{entity.cstmId:VARCHAR},
+        #{entity.parentId:VARCHAR},
+        #{entity.name:VARCHAR},
+        #{entity.desc:VARCHAR},
+        #{entity.type:INTEGER},
+        #{entity.suffix:VARCHAR},
+        #{entity.size:INTEGER},
+        #{entity.path:VARCHAR},
+        #{entity.md5:VARCHAR},
+        #{entity.usageCount:INTEGER},
+        now(),
+        now(),
+        #{entity.creatorId:VARCHAR},
+        #{entity.creatorName:VARCHAR},
+        #{entity.checkTime:TIMESTAMP},
+        #{entity.checkUserId:VARCHAR},
+        #{entity.checkUserName:VARCHAR},
+        #{entity.checkStatus:VARCHAR},
+        '0',
+        #{entity.libraryType:VARCHAR}
+    </sql>
+
+    <sql id="set-part">
+        <if test="entity.id != null">id = #{entity.id:VARCHAR},</if>
+        <if test="entity.cstmId != null">cstm_id = #{entity.cstmId:VARCHAR},</if>
+        <if test="entity.parentId != null">parent_id = #{entity.parentId:VARCHAR},</if>
+        <if test="entity.name != null">name = #{entity.name:VARCHAR},</if>
+        <if test="entity.desc != null">desc_ = #{entity.desc:VARCHAR},</if>
+        <if test="entity.type != null">type = #{entity.type:INTEGER},</if>
+        <if test="entity.suffix != null">suffix = #{entity.suffix:VARCHAR},</if>
+        <if test="entity.size != null">size = #{entity.size:INTEGER},</if>
+        <if test="entity.path != null">path = #{entity.path:VARCHAR},</if>
+        <if test="entity.md5 != null">md5 = #{entity.md5:VARCHAR},</if>
+        <if test="entity.usageCount != null">usage_count = #{entity.usageCount:INTEGER},</if>
+        <if test="entity.creatorId != null">creator_id = #{entity.creatorId:VARCHAR},</if>
+        <if test="entity.creatorName != null">creator_name = #{entity.creatorName:VARCHAR},</if>
+        <if test="entity.checkTime != null">check_time = #{entity.checkTime:TIMESTAMP},</if>
+        <if test="entity.checkUserId != null">check_user_id = #{entity.checkUserId:VARCHAR},</if>
+        <if test="entity.checkUserName != null">check_user_name = #{entity.checkUserName:VARCHAR},</if>
+        <if test="entity.checkStatus != null">check_status = #{entity.checkStatus:VARCHAR},</if>
+        <if test="entity.isDelete != null">is_delete = #{entity.isDelete:VARCHAR},</if>
+        <if test="entity.libraryType != null">library_type = #{entity.libraryType:VARCHAR},</if>
+        update_time = now()
+    </sql>
+
+    <sql id="if-part">
+        <if test="terms != null">
+            <where>
+                <if test="terms.parentId != null and terms.parentId !=''">
+                    and parent_id =#{terms.parentId}
+                </if>
+                <if test="terms.name != null and terms.name !=''">
+                    and name LIKE CONCAT('%',#{terms.name},'%')
+                </if>
+                <if test="terms.cstmId != null and terms.cstmId !=''">
+                    and cstm_id = #{terms.cstmId}
+                </if>
+                <if test="terms.checkStatus != null and terms.checkStatus !=''">
+                    and check_status = #{terms.checkStatus}
+                </if>
+                <if test="terms.isDelete != null and terms.isDelete !=''">
+                    and is_delete = #{terms.isDelete}
+                </if>
+                <if test="terms.libraryType != null and terms.libraryType !=''">
+                    and library_type = #{terms.libraryType}
+                </if>
+                <if test="terms.creatorId != null and terms.creatorId !=''">
+                    and creator_id = #{terms.creatorId}
+                </if>
+                <if test="terms.md5 != null and terms.md5 !=''">
+                    and md5 = #{terms.md5}
+                </if>
+                <if test="terms.type != null and terms.type.length > 0">
+                    and
+                    <foreach item="item" index="index"
+                             collection="terms.type" open="("
+                             separator="or" close=")">
+                        type = #{item}
+                    </foreach>
+                </if>
+                <if test="terms.ids != null and terms.ids.length > 0">
+                    and
+                    <foreach item="item" index="index"
+                             collection="terms.ids" open="("
+                             separator="or" close=")">
+                        id = #{item}
+                    </foreach>
+                </if>
+            </where>
+        </if>
+    </sql>
+
+
+    <sql id="order-part">
+        <if test="order != null and order !=''">
+            <if test="order=='nameOrder'">
+                order by name desc
+            </if>
+            <if test="order=='sizeOrder'">
+                order by size desc
+            </if>
+            <if test="order=='updateTimeOrder'">
+                order by update_time desc
+            </if>
+        </if>
+    </sql>
+
+    <insert id="insert">
+        INSERT INTO
+        <include refid="table-name"/>
+        (
+        <include refid="column-part"/>
+        ) VALUES (
+        <include refid="value-part"/>
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE
+        <include refid="table-name"/>
+        <set>
+            <include refid="set-part"/>
+        </set>
+        <where>
+            id = #{entity.id}
+        </where>
+    </update>
+
+    <delete id="delete">
+        DELETE FROM
+        <include refid="table-name"/>
+        WHERE id = #{id}
+    </delete>
+
+    <select id="find" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        <include refid="table-name"/>
+        WHERE id = #{id}
+    </select>
+
+    <select id="count" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM
+        <include refid="table-name"/>
+        <include refid="if-part"/>
+    </select>
+
+    <select id="query" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        <include refid="table-name"/>
+        <include refid="if-part"/>
+            ORDER BY ${orderName}  ${order}
+        LIMIT #{page.offset}, #{page.size}
+    </select>
+
+    <select id="finds" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        <include refid="table-name"/>
+        <include refid="if-part"/>
+    </select>
+
+    <!--获取md5数量-->
+    <select id="checkmd5" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM
+        <include refid="table-name"/>
+        WHERE md5 = #{md5}
+    </select>
+
+    <!--更新删除状态-->
+    <delete id="updateDelete">
+        UPDATE
+        <include refid="table-name"/>
+        <set>
+            is_delete = #{isDelete}
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </delete>
+
+    <!--通过目录id获取子目录/文件,过滤掉已经删除的子目录/文件-->
+    <select id="getByParentId" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        <include refid="table-name"/>
+        WHERE parent_id = #{parentId}
+        and is_delete = '0'
+    </select>
+
+    <select id="getTotalAttach" resultMap="TotalAttchment">
+
+          SELECT COUNT(*) AS total,t.type FROM tb_file t WHERE t.type!=0 AND cstm_id =#{cstmId} GROUP BY  t.type
+
+    </select>
+
+    <select id="getFolderByName" resultMap="dataResultMap">
+         SELECT * FROM tb_file  t
+             WHERE t.cstm_id=#{cstmId}
+             AND t.creator_id=#{userId}
+             AND t.name = #{name}
+             AND t.type = '0'
+             AND t.is_delete = '0'
+    </select>
+
+    <select id="getCloudWidgetTerminalFolder" resultMap="dataResultMap">
+         SELECT * FROM tb_file  t
+             WHERE t.cstm_id = #{cstmId}
+             AND t.creator_id = #{terminalId}
+             AND t.library_type = '2'
+             AND t.parent_id = '0'
+             AND t.type = '0'
+             AND t.is_delete = '0'
+    </select>
+
+    <select id="getCloudWidgetFolder" resultMap="dataResultMap">
+        select * from tb_file s
+          left join tb_file p on p.id=s.parent_id
+          where s.name=#{widgetName}
+          and p.creator_id=#{terminalId}
+          and p.cstm_id=#{cstmId}
+          and p.library_type='2'
+          and p.type ='0'
+          and p.is_delete='0'
+    </select>
+
+    <select id="findByNameAndSuffix" resultMap="dataResultMap">
+
+        SELECT * FROM tb_file  t WHERE t.cstm_id=#{cstmId}  AND t.creator_id=#{userId} AND t.name = #{name}
+        <if test="suffix!=''and suffix!=null">
+            AND t.suffix = #{suffix}
+        </if>
+            AND is_delete = 0  AND library_type != 4
+    </select>
+
+    <!--获取云素材总数-->
+    <select id="countCloud" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM
+        (
+            select tf.* from tb_file tf
+            left join tb_terminal tt on tt.terminal_id=tf.creator_id
+            left join tb_terminal_permission ttp on ttp.ter_id=tt.id
+            where ttp.user_id = #{terms.userId}
+        ) t
+        <include refid="if-part"/>
+    </select>
+
+    <!--获取云素材列表-->
+    <select id="queryCloud" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        (
+            select tf.* from tb_file tf
+            left join tb_terminal tt on tt.terminal_id=tf.creator_id
+            left join tb_terminal_permission ttp on ttp.ter_id=tt.id
+            where ttp.user_id = #{terms.userId}
+        ) t
+        <include refid="if-part"/>
+        ORDER BY ${orderName} ${order}
+        LIMIT #{page.offset}, #{page.size}
+    </select>
+
+    <!--获取云素材列表-->
+    <select id="findsCloud" resultMap="dataResultMap">
+        SELECT
+        <include refid="column-part"/>
+        FROM
+        (
+        select tf.* from tb_file tf
+        left join tb_terminal tt on tt.terminal_id=tf.creator_id
+        left join tb_terminal_permission ttp on ttp.ter_id=tt.id
+        where ttp.user_id = #{terms.userId}
+        ) t
+        <include refid="if-part"/>
+    </select>
+    <delete id="deleteByCstmId">
+        delete from tb_file
+        where
+        cstm_id = #{arg0}
+    </delete>
+
+    <select id="selectMd5UsedByOtherCstm" resultType="java.lang.String">
+       select md5 from tb_file
+       where
+       cstm_id != #{arg0}
+    </select>
+    <select id="deleteMd5s" resultType="java.lang.String">
+        SELECT md5 FROM `tb_file`  WHERE md5 NOT IN(
+          SELECT DISTINCT(t1.md5) FROM (
+            SELECT md5 FROM `tb_file`  WHERE cstm_id = #{arg0} AND md5 IS NOT NULL) t1,
+            (SELECT md5 FROM `tb_file`  WHERE cstm_id != #{arg0}  AND md5 IS NOT NULL) t2
+          WHERE t1.md5 = t2.md5
+         ) AND md5 IS NOT NULL AND cstm_id = #{arg0}
+    </select>
+
+    <select id="findByMd5" resultMap="dataResultMap">
+        select * from tb_file tf
+        where tf.md5=#{arg0} limit 1
+    </select>
+</mapper>

@@ -1,0 +1,32 @@
+# server
+server:
+  port: 12001
+  tomcat:
+    accesslog:
+      prefix: TOMCAT
+
+# 数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bunny_petroleum?useSSL=false
+    username: bunny
+    password: bunny
+  #  profiles:
+  #    include: log4j2.yml
+  session:
+    store-type: none
+# mybatis
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+# dubbo
+dubbo:
+  application:
+    name: gateway
+    owner: dubbo
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: -1

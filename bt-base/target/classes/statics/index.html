@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="*" http-equiv="Access-Control-Allow-Origin"/>
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <div><label> usname : <input name="username" type="text" value="user"/></label></div>
+    <div><label> password : <input name="password" type="password" value="password"/></label></div>
+    <div><input onclick="submits()" type="button" value="login"/></div>
+</form>
+<script src="jquery-2.1.4.min.js"></script>
+<script>
+    function submits() {
+        alert(111);
+        $.ajax({
+            type: "POST",
+            url: "http://www.baidu.com",
+            dataType: "json",
+            success: function (result) {
+                window.location.href = "http://cloud.bunnysky.net:12001/bt";
+            }
+        });
+    }
+</script>
+</body>
+</html>

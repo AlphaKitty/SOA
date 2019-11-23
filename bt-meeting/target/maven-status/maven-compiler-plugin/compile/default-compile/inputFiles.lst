@@ -1,0 +1,17 @@
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\impl\TbMeetingServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\mapper\TbMeetingMapper.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\config\DubboConfig.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\MybatisPlusGeneratorInMeeting.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\mapper\TbMeetingRelevanceMapper.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\ITbMeetingService.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\impl\TbMeetingVisitorServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\impl\TbMeetingRelevanceServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\mapper\TbMeetingVisitorMapper.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\config\MybatisConfig.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\controller\TbMeetingVisitorController.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\ITbMeetingRelevanceService.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\service\ITbMeetingVisitorService.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\controller\TbMeetingRelevanceController.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\SpringBootMeeting.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\MainConfig.java
+D:\mass\BunnyTouch_SOA\bt-meeting\src\main\java\com\proshine\meeting\meeting\controller\TbMeetingController.java

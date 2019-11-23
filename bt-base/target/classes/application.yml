@@ -1,0 +1,38 @@
+# server
+server:
+  port: 8082
+  tomcat:
+    accesslog:
+      prefix: TOMCAT
+
+# spring[datasource/profiles/session/security]
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bunny_petroleum?useSSL=false
+    username: bunny
+    password: bunny
+  #  profiles:
+  #    include: log4j2.yml
+  session:
+    store-type: none
+  security:
+    user:
+      name: admin
+      password: admin
+# mybatis
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+# dubbo
+dubbo:
+  application:
+    name: base
+    owner: dubbo
+    qos:
+      port: 33333
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: -1

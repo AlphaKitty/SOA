@@ -1,0 +1,17 @@
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\controller\TbCameraController.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\MainConfig.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\MybatisPlusGeneratorInCamera.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\mapper\TbTeacherGroupRelMapper.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\impl\TbTeacherGroupRelServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\controller\TbGroupController.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\mapper\TbCameraMapper.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\controller\TbTeacherGroupRelController.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\impl\TbCameraServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\config\DubboConfig.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\mapper\TbGroupMapper.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\impl\TbGroupServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\config\MybatisConfig.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\SpringBootCamera.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\ITbCameraService.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\ITbTeacherGroupRelService.java
+D:\mass\BunnyTouch_SOA\bt-camera\src\main\java\com\proshine\camera\camera\service\ITbGroupService.java

@@ -1,0 +1,15 @@
+com\proshine\partner\partner\service\impl\TbPartnerInfoCopy1ServiceImpl.class
+com\proshine\partner\partner\mapper\TbPartnerInfoCopy1Mapper.class
+com\proshine\partner\partner\controller\TbPartnerInfoController.class
+com\proshine\partner\partner\service\ITbPartnerInfoCopy1Service.class
+com\proshine\partner\MybatisPlusGeneratorInPartner.class
+com\proshine\partner\partner\mapper\TbPartnerInfoMapper.class
+com\proshine\partner\partner\service\impl\TbPartnerInfoServiceImpl.class
+com\proshine\partner\partner\controller\TbPartnerInfoCopy1Controller.class
+com\proshine\partner\partner\service\ITbPartnerInfoService.class
+com\proshine\partner\config\MybatisConfig.class
+com\proshine\partner\MybatisPlusGeneratorInPartner$2.class
+com\proshine\partner\SpringBootPartner.class
+com\proshine\partner\MainConfig.class
+com\proshine\partner\MybatisPlusGeneratorInPartner$1.class
+com\proshine\partner\config\DubboConfig.class

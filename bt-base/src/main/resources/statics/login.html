@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<!--<div th:if="${param.error}">-->
+<!--    pwd error-->
+<!--</div>-->
+<!--<div th:if="${param.logout}">-->
+<!--    logout success-->
+<!--</div>-->
+<form method="post" th:action="www.baidu.com">
+    <div><label> usname : <input name="username" type="text"/> </label></div>
+    <div><label> password : <input name="password" type="password"/> </label></div>
+    <div><input type="submit" value="login"/></div>
+</form>
+</body>
+</html>

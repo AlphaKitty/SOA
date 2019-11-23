@@ -1,0 +1,13 @@
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\MybatisPlusGeneratorInPartner.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\MainConfig.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\controller\TbPartnerInfoController.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\service\ITbPartnerInfoCopy1Service.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\service\impl\TbPartnerInfoServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\mapper\TbPartnerInfoCopy1Mapper.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\mapper\TbPartnerInfoMapper.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\controller\TbPartnerInfoCopy1Controller.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\service\ITbPartnerInfoService.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\config\MybatisConfig.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\SpringBootPartner.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\partner\service\impl\TbPartnerInfoCopy1ServiceImpl.java
+D:\mass\BunnyTouch_SOA\bt-partner\src\main\java\com\proshine\partner\config\DubboConfig.java

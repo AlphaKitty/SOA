@@ -1,0 +1,15 @@
+com\proshine\attendance\attendance\controller\TbJeecgApiTerminalCategoryRelevanceController.class
+com\proshine\attendance\attendance\service\ITbJeecgApiTerminalAttendanceRuleRelevanceService.class
+com\proshine\attendance\attendance\service\impl\TbJeecgApiTerminalCategoryRelevanceServiceImpl.class
+com\proshine\attendance\attendance\mapper\TbJeecgApiTerminalAttendanceRuleRelevanceMapper.class
+com\proshine\attendance\attendance\controller\TbJeecgApiTerminalAttendanceRuleRelevanceController.class
+com\proshine\attendance\MybatisPlusGeneratorInAttendance$2.class
+com\proshine\attendance\MybatisPlusGeneratorInAttendance$1.class
+com\proshine\attendance\config\MybatisConfig.class
+com\proshine\attendance\attendance\mapper\TbJeecgApiTerminalCategoryRelevanceMapper.class
+com\proshine\attendance\attendance\service\impl\TbJeecgApiTerminalAttendanceRuleRelevanceServiceImpl.class
+com\proshine\attendance\attendance\service\ITbJeecgApiTerminalCategoryRelevanceService.class
+com\proshine\attendance\config\DubboConfig.class
+com\proshine\attendance\MainConfig.class
+com\proshine\attendance\MybatisPlusGeneratorInAttendance.class
+com\proshine\attendance\SpringBootAttendance.class
