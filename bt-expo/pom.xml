@@ -14,7 +14,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <httpclient.version>4.5.4</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <project.jar.name>bt-expo_1.0.0</project.jar.name>
     </properties>
 
