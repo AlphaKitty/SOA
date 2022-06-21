@@ -39,7 +39,7 @@
         <velocity.version>2.1</velocity.version>
         <freemarker.version>2.3.29</freemarker.version>
         <beetl.version>3.0.11.RELEASE</beetl.version>
-        <mysql.version>5.1.40</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <dubbo.version>2.0.0</dubbo.version>
         <zookeeper.version>3.4.12</zookeeper.version>
         <zkclient.version>0.9</zkclient.version>
